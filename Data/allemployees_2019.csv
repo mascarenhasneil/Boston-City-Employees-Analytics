@@ -1,4 +1,4 @@
-NAME,DEPARTMENT_NAME,TITLE, REGULAR , RETRO , OTHER , OVERTIME , INJURED , DETAIL , QUINN/EDUCATION INCENTIVE ,TOTAL EARNINGS,POSTAL
+NAME,DEPARTMENT_NAME,TITLE,REGULAR,RETRO,OTHER,OVERTIME,INJURED,DETAIL,QUINN/EDUCATION_INCENTIVE,TOTAL_EARNINGS,POSTAL
 "Bottomley,Torii A",BPS Business Service,BPS Worker's Comp Job Class,  -   ,  -   ,  -   ,  -   ,"  772,034.24 ",  -   ,  -   ,"772,034.24",01938
 "Smith,Lincoln",Workers Compensation Service,Workers Comp Job Classificatn,  -   ,  -   ,  -   ,  -   ,"  401,182.80 ",  -   ,  -   ,"401,182.80",02125
 "Kervin,Timothy M.",Boston Police Department,Police Lieutenant/Hdq Dispatch,"  142,061.86 ",  -   ,"  21,262.85 ","  115,361.12 ",  -   ,"  41,360.00 ","  35,492.87 ","355,538.70",02135
