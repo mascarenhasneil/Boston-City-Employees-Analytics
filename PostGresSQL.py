@@ -1,3 +1,15 @@
+""" Final Project – Draft Report
+ALY 6110 Data Management and Big Data, Fall 2021
+Module 5 Group Assignment 5
+
+Ankit Yadav, Neil Mascarenhas, Sai Anila Sushma Malladhi
+
+College of Professional Studies, Northeastern University
+Prof: Daya Rudhramoorthi 
+Oct 20th, 2021
+
+"""
+
 # This file contails the PostGresSQL code. Here we create the connecton to the PostgresSQL server online and 
 # export our data to the data base. 
 
@@ -125,32 +137,26 @@ def ImportTable():
         
         
         with open('data/EmpEarn.csv', 'r',encoding="utf-8") as f:
-            # reader = csv.reader(f)
-            # next(reader) # Skip the header row.
-            # for row in reader:
-            #     cur.execute(
-            #     "INSERT INTO BostonEmpEarn VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-            #     row
-            # )
-            # Notice that we don't need the `csv` module.
-            next(f) # Skip the header row.
-            cur.copy_from(f, 'BostonEmpEarn', sep=',')
-
+             reader = csv.reader(f)
+             next(reader) # Skip the header row.
+             for row in reader:
+                 cur.execute(
+                 "INSERT INTO BostonEmpEarn VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                 row 
+             ) #Notice that we don't need the `csv` module.            
+        next(f) # Skip the header row.
+        cur.copy_from(f, 'BostonEmpEarn', sep=',')
         conn.commit()
-
         cur.execute('SELECT * FROM BostonEmpEarn')
         one = cur.fetchone()
         print(one)
-       
-	# close the communication with the PostgreSQL
-        cur.close()
+        cur.close() # close the communication with the PostgreSQL
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
         if conn is not None:
             conn.rollback()
     finally:
-        if conn is not None:
-            
+        if conn is not None:           
             conn.close()
             print('Database connection closed.')
 
